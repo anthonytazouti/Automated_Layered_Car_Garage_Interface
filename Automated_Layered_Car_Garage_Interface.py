@@ -25,15 +25,18 @@ print(" ")
 
 
 while True:
+    try:
         whatCar = int(input("What level would you like delivered?\n"))
         whatCar = int(whatCar)
         whatCar = whatCar - 1
         numValue = listwhatCar[whatCar]
         for i in range(whatCar + 1, 0, -1):
-            print("Descending in ", (i),"!")
+            print("Descending in ",(i),"!")
             time.sleep(1)
         print("")
         print("*"*37)
         print(f"Your", numValue.upper(), "has descended from level", whatCar + 1,"!")
         print("*" * 37)
         break
+    except (ValueError, IndexError):
+        print("Invalid input. Please enter a valid level number.")
